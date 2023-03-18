@@ -1,3 +1,8 @@
+## 0.0.3
+
+* Rename `ChatGPTAPI` class to `ChatGPTClient` for consistency.
+
+
 ## 0.0.2
 
 * Update README

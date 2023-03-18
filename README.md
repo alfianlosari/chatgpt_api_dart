@@ -24,13 +24,13 @@ Initialize with api key. Default model is `gpt-3.5-turbo`.
 ```dart
 import 'package:chatgpt_client/chatgpt_client.dart';
 
-const api = ChatGPTAPI(apiKey: "API_KEY");
+const client = ChatGPTClient(apiKey: "API_KEY");
 ```
 
 optionally, you can provide the system prompt, temperature, and model like so.
 
 ```dart
-const api = ChatGPTAPI(apiKey: "API_KEY",
+const client = ChatGPTClient(apiKey: "API_KEY",
     model: "gpt-4",
     systemPrompt: "You are a CS Professor",
     temperature: 0.7);
@@ -45,7 +45,7 @@ The server will yield chunks of data until the stream completes or throws an err
 ```dart
 try {
     var text = "";
-    final stream = api.sendMessageStream(prompt);
+    final stream = client.sendMessageStream(prompt);
     await for (final textChunk in stream) {
         text += textChunk;
         print(textChunk);
@@ -61,7 +61,7 @@ A normal HTTP request and response lifecycle. Server will send the complete text
 
 ```dart
 try {
-    final text = await api.sendMessage(prompt);
+    final text = await client.sendMessage(prompt);
     print(text);
 } catch (exception) {
     print(exception.toString());
@@ -75,5 +75,5 @@ The client stores the history list of the conversation that will be included in 
 You can also delete the history list by invoking
 
 ```dart
-api.clearHistoryList();
+client.clearHistoryList();
 ```
