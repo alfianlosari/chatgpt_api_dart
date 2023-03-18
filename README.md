@@ -9,6 +9,7 @@ Access OpenAI ChatGPT Official API using Dart Language. Supports any Dart projec
 - Support any custom model as Parameter (GPT-3.5, GPT-4, etc)
 - Support Stream HTTP Response using native Dart Stream.
 - Support Standard HTTP Response.
+- Pass custom system prompt and temperature.
 
 ## Getting started
 
@@ -21,7 +22,7 @@ Register for API key from [OpenAI](https://openai.com/api).
 Initialize with api key. Default model is `gpt-3.5-turbo`.
 
 ```dart
-import 'package:chatgpt_api/src/chatgptapi.dart';
+import 'package:chatgpt_client/chatgpt_client.dart';
 
 const api = ChatGPTAPI(apiKey: "API_KEY");
 ```
