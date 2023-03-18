@@ -1,10 +1,8 @@
-library chatgpt_api;
-
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:chatgpt_client/src/message.dart';
 
-class ChatGPTAPI {
+class ChatGPTClient {
   final url = Uri.https("api.openai.com", "/v1/chat/completions");
   final String apiKey;
   final String model;
@@ -14,7 +12,7 @@ class ChatGPTAPI {
   List<Message> _historyList = List.empty(growable: true);
   final _client = http.Client();
 
-  ChatGPTAPI(
+  ChatGPTClient(
       {required this.apiKey,
       this.model = "gpt-3.5-turbo",
       this.systemPrompt = "You are a helpful assistant",
