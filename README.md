@@ -15,6 +15,21 @@ Access OpenAI ChatGPT Official API using Dart Language. Supports any Dart projec
 
 Register for API key from [OpenAI](https://openai.com/api). 
 
+## Installation
+
+This package is hosted in [Pub Dev Library](https://pub.dev/packages/chatgpt_client)
+
+### Flutter App
+
+```dart
+flutter pub add chagpt_client
+```
+
+### Dart App
+```dart
+dart pub add chagpt_client
+```
+
 ## Usage
 
 ### Initialization
