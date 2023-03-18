@@ -103,10 +103,12 @@ class ChatGPTClient {
 
       var responseText = "";
       await for (final byte in byteStream) {
-        var decoded = utf8.decode(byte).trim(); 
-        if (decoded.startsWith("data: ") && !decoded.endsWith("[DONE]")) {          
-            decoded = decoded.substring(6);
-            final map = jsonDecode(decoded) as Map;
+        var decoded = utf8.decode(byte);
+        final strings = decoded.split("data: ");
+        for (final string in strings) {
+          final trimmedString = string.trim();
+          if (trimmedString.isNotEmpty && !trimmedString.endsWith("[DONE]")) {
+            final map = jsonDecode(trimmedString) as Map;
             final choices = map["choices"] as List;
             final delta = choices[0]["delta"] as Map;
             if (delta["content"] != null) {
@@ -114,6 +116,7 @@ class ChatGPTClient {
               responseText += content;
               yield content;
             }  
+          }
         }
     }
 

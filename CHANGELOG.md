@@ -1,3 +1,7 @@
+## 0.0.6
+
+* Handle parsing case where stream response has multiple chunks in byte stream
+
 ## 0.0.5
 
 * Use substring instead of replaceFirst for parsing stream response
