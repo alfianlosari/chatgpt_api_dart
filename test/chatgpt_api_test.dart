@@ -1,4 +1,4 @@
-import 'package:chatgpt_api/src/chatgptapi.dart';
+import 'package:chatgpt_api_client/chatgpt_api_client.dart';
 
 void main() async {
    final api = ChatGPTAPI(apiKey: "API_KEY");
@@ -24,8 +24,7 @@ void main() async {
       print(text);
     } catch (exception) {
       print(exception.toString());
-
     }
 
-    
+    api.clearHistoryList();
 }
