@@ -1,3 +1,9 @@
+## 0.0.4
+
+* Fix parsing issue in stream response
+
+
+
 ## 0.0.3
 
 * Rename `ChatGPTAPI` class to `ChatGPTClient` for consistency.

@@ -1,6 +1,6 @@
 name: chatgpt_client
 description: ChatGPT API Client for Dart
-version: 0.0.3
+version: 0.0.4
 homepage: https://github.com/alfianlosari/chatgpt_api_dart
 
 environment:

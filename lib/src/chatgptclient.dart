@@ -10,7 +10,6 @@ class ChatGPTClient {
   final double temperature;
 
   List<Message> _historyList = List.empty(growable: true);
-  final _client = http.Client();
 
   ChatGPTClient(
       {required this.apiKey,
@@ -58,7 +57,7 @@ class ChatGPTClient {
   }
 
   Future<String> sendMessage(String text) async {
-      final response = await _client.post(url,
+      final response = await http.Client().post(url,
           headers: _getHeaders(), body: _getBody(text, false));
       
       dynamic decodedResponse;
@@ -104,9 +103,9 @@ class ChatGPTClient {
 
       var responseText = "";
       await for (final byte in byteStream) {
-        var decoded = utf8.decode(byte).trim();  
-        if (decoded.startsWith("data: ") && !decoded.endsWith("data: [DONE]")) {          
-            decoded = decoded.replaceFirst("data: ", "").trim();
+        var decoded = utf8.decode(byte).trim(); 
+        if (decoded.startsWith("data:") && !decoded.endsWith("[DONE]")) {          
+            decoded = decoded.replaceFirst("data:", "").trim();
             final map = jsonDecode(decoded) as Map;
             final choices = map["choices"] as List;
             final delta = choices[0]["delta"] as Map;
