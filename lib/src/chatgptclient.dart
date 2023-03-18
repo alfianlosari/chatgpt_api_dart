@@ -104,8 +104,8 @@ class ChatGPTClient {
       var responseText = "";
       await for (final byte in byteStream) {
         var decoded = utf8.decode(byte).trim(); 
-        if (decoded.startsWith("data:") && !decoded.endsWith("[DONE]")) {          
-            decoded = decoded.replaceFirst("data:", "").trim();
+        if (decoded.startsWith("data: ") && !decoded.endsWith("[DONE]")) {          
+            decoded = decoded.substring(6);
             final map = jsonDecode(decoded) as Map;
             final choices = map["choices"] as List;
             final delta = choices[0]["delta"] as Map;
