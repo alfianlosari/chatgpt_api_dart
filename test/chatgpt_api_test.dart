@@ -1,4 +1,4 @@
-import 'package:chatgpt_api_client/chatgpt_api_client.dart';
+import 'package:chatgpt_client/chatgpt_client.dart';
 
 void main() async {
    final api = ChatGPTAPI(apiKey: "API_KEY");

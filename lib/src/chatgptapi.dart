@@ -2,7 +2,7 @@ library chatgpt_api;
 
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:chatgpt_api_client/src/message.dart';
+import 'package:chatgpt_client/src/message.dart';
 
 class ChatGPTAPI {
   final url = Uri.https("api.openai.com", "/v1/chat/completions");

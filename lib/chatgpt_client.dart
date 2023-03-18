@@ -1,3 +1,3 @@
-library chatgpt_api_client;
+library chatgpt_client;
 
 export 'src/chatgptapi.dart' show ChatGPTAPI;

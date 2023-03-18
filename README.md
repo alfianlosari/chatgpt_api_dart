@@ -1,4 +1,4 @@
-# ChatGPT API Client
+# ChatGPT Client
 
 Access OpenAI ChatGPT Official API using Dart Language. Supports any Dart project and all Flutter target platforms (iOS, Android, Windows, Linux, Web)
 
