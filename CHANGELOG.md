@@ -1,3 +1,7 @@
+## 1.0.0
+
+* Bump version to stable `1.0.0` release
+
 ## 0.0.7
 
 * Update Pubspec and readme
