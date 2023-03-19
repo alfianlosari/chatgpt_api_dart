@@ -1,8 +1,7 @@
 import 'package:chatgpt_client/chatgpt_client.dart';
 
 void main() async {
-  final client = ChatGPTClient(
-      apiKey: "API_KEY");
+  final client = ChatGPTClient(apiKey: "API_KEY");
   final prompt = "what is observable object?";
 
   /// Standard Response

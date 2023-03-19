@@ -1,6 +1,6 @@
 name: chatgpt_client
-description: ChatGPT API Client for Dart
-version: 0.0.6
+description: Access OpenAI ChatGPT Public API using Dart Language. Supports native Dart project and all Flutter target platforms (iOS, Android, Windows, Linux, Web) It provides streamed and normal response when asking ChatGPT, the client also stores the converstation list history so it can be used on new prompt to make it aware of previous conversation context.
+version: 0.0.7
 homepage: https://github.com/alfianlosari/chatgpt_api_dart
 
 environment:

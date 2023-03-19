@@ -1,6 +1,10 @@
+## 0.0.7
+
+* Update Pubspec and readme
+
 ## 0.0.6
 
-* Handle parsing case where stream response has multiple chunks in byte stream
+* Handle parsing case where stream response has multiple chunks of `data:` in byte stream
 
 ## 0.0.5
 
