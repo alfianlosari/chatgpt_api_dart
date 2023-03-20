@@ -1,25 +1,25 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:chatgpt_client/src/message.dart';
+import 'stream_client.dart';
 
 /// A class to interact with OpenAI ChatGPT Completions API
 /// Support various models such as gpt-3.5-turbo, gpt-4, etc
 class ChatGPTClient {
-
   /// OpenAI ChatGPT Completions API Endpoint URL
   final url = Uri.https("api.openai.com", "/v1/chat/completions");
 
   /// OpenAI API Key which you can get from https://openai.com/api
-  final String apiKey;
+  String apiKey;
 
   /// GPT Model (gpt-3.5-turbo, gpt-4, etc) default to gpt-3.5-turbo
-  final String model;
+  String model;
 
   /// System prompt, default to "You're a helpful assistant"
-  final String systemPrompt;
+  String systemPrompt;
 
   /// Temperature, default to 0.5
-  final double temperature;
+  double temperature;
 
   List<Message> _historyList = List.empty(growable: true);
 
@@ -104,9 +104,9 @@ class ChatGPTClient {
     final request = http.Request("POST", url)..headers.addAll(_getHeaders());
     request.body = _getBody(text, true);
 
-    final responseStream = await request.send();
-    final statusCode = responseStream.statusCode;
-    final byteStream = responseStream.stream;
+    final response = await StreamClient.instance.send(request);
+    final statusCode = response.statusCode;
+    final byteStream = response.stream;
 
     if (!(statusCode >= 200 && statusCode < 300)) {
       var error = "";

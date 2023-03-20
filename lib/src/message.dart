@@ -1,6 +1,5 @@
 /// ChatGPT message
 class Message {
-
   /// Content of message
   final String content;
 
