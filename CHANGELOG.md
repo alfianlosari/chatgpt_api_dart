@@ -1,3 +1,7 @@
+## 1.1.0
+
+* Fix HTTP Stream on Web
+
 ## 1.0.0
 
 * Bump version to stable `1.0.0` release
